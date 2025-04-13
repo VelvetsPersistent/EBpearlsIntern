@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="hero.css">
+    <link rel="stylesheet" href="feature.css">
+    <link rel="stylesheet" href="task.css">
+    <link rel="stylesheet" href="contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="header">
+        <div class="logo">
+            
+        </div>
+        
+        <nav class="menu">
+            <li class="menu-item">Products</li>
+            <li class="menu-item">Solutions</li>
+            <li class="menu-item">Help center</li>
+            <li class="menu-item">Get started</li>
+        </nav>
+        
+        <div class="login-area">
+            <button class="login-btn">Login</button>
+            <button class="demo-btn">Request a Demo</button>
+        </div>
+    </header>
+
+    <!-- Hero Slider -->
+    <section class="hero">
+        <div class="hero-content">
+          <h1>Get instant cash flow with invoice factoring</h1>
+          <p>Why wait? Get same day funding and a faster way to access cash flow.</p>
+          <button class="hero-btn">Get Started</button>
+          <div class="slider-indicators">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+      
+        <div class="hero-image">
+          <img src="assets/hero-img.png" alt="Cash Flow Illustration" />
+        </div>
+    </section>
+
+    <!-- Call to Action or Feature -->
+    <Section class="feature">
+      <div class="feature-intro">
+        <h1>
+          Outsource payment collection
+        </h1>
+        <p>Faster and flexible access to cash flow from one or all your invoices.</p>
+      </div>
+      <div class="feature-cards">
+        <div class="feature-item">
+          <img src="assets/icon.png" alt="">
+          <h1>Access up to $100,000</h1>
+          <p>We fund each invoice once approved and collect payment to optimise your cash flow.*</p>
+        </div>
+        <div class="feature-item">
+          <img src="assets/icon.png" alt="">
+          <h1>You choose invoices to get paid</h1>
+          <p>Self-serve online portal available 24/7 or connect from your CRM or invoicing platform</p>
+        </div>
+        <div class="feature-item">
+          <img src="assets/icon.png" alt="">
+          <h1>Simple pricing</h1>
+          <p>Only pay for what you use, if you don't need us,<br> there are no costs.</p>
+        </div>
+        <div class="feature-item">
+          <img src="assets/icon.png" alt="">
+          <h1>Click and quick</h1>
+          <p>We fund each invoice once approved and collect payment to optimise your cash flow.*</p>
+        </div>
+        <div class="feature-item">
+          <img src="assets/icon.png" alt="">
+          <h1>Flexible</h1>
+          <p>Self-serve online portal available 24/7 or connect from your CRM or invoicing platform</p>
+        </div>
+        <div class="feature-item">
+          <img src="assets/icon.png" alt="">
+          <h1>Invest in your business</h1>
+          <p>Only pay for what you use, if you don't need us,<br> there are no costs.</p>
+        </div>
+      </div>
+    </Section>
+
+    <!-- Task manager -->
+    <section class="task-manager">
+      <div class="task-bg">
+        <div class="task-intro">
+          <h1>
+            Task manager
+          </h1>
+          <p>Your daily to do list</p>
+        </div>
+        <div class="task-todo">
+          <div class="tasks" id="task-list">
+          </div>
+          <div class="task-entry">
+            <input type="text" id="task-input" placeholder="Add new task">
+            <button id="add-button">Add task</button>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="contact-intro">
+        <h1>
+          Contact Us
+        </h1>
+        <p>
+          Speak with our team
+        </p>
+      </div>
+      <div class="contact-form">
+        <input type="text" id="task-input" placeholder="Your name">
+      <input type="text" id="task-input" placeholder="Email">
+      <input type="text" id="task-input" placeholder="Your best contact number">
+      <input type="text" id="task-input" placeholder="Business or Company name">
+      <button id="add-button">Submit</button>
+      </div>
+    </section>
+      <script>
+        const taskInput = document.getElementById('task-input');
+        const addButton = document.getElementById('add-button');
+        const taskList = document.getElementById('task-list');
+
+        addButton.addEventListener('click', addTask);
+        taskInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                addTask();
+            }
+        });
+
+        function addTask() {
+            const taskText = taskInput.value.trim();
+            if (taskText !== '') {
+                const listItem = document.createElement('li');
+                listItem.classList.add('task-container');
+
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.classList.add('checkbox');
+                checkbox.addEventListener('change', toggleTaskCompletion);
+
+                const taskSpan = document.createElement('span');
+                taskSpan.classList.add('task-text');
+                taskSpan.textContent = taskText;
+
+                const deleteButton = document.createElement('button');
+                deleteButton.classList.add('delete-button');
+                deleteButton.textContent = 'X Delete';
+                deleteButton.addEventListener('click', deleteTask);
+
+                listItem.appendChild(checkbox);
+                listItem.appendChild(taskSpan);
+                listItem.appendChild(deleteButton);
+                taskList.appendChild(listItem);
+
+                taskInput.value = ''; // Clear the input
+            }
+        }
+
+        function toggleTaskCompletion(event) {
+            const listItem = event.target.parentNode;
+            listItem.classList.toggle('completed');
+        }
+
+        function deleteTask(event) {
+            const listItem = event.target.parentNode;
+            taskList.removeChild(listItem);
+        }
+
+      </script>
+</body>
+</html>

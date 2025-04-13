@@ -1,0 +1,118 @@
+/* === Hero Section Base === */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #121D2D;
+    padding: 0 5%;
+    max-height: 600px;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  
+  /* === Left: Textual Content === */
+  .hero-content {
+    flex: 1 1 500px;
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    color: white;
+    padding-left: 3%;
+  }
+  
+  .hero-content h1 {
+    font-size: 70px;
+    font-weight: 800;
+    line-height: 1.1;
+  }
+  
+  .hero-content p {
+    font-size: 18px; /* 18px */
+    line-height: 1.8;
+    font-weight: 400;
+  }
+  
+  .hero-btn {
+    background: white;
+    color: #4532FC;;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 16px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    width: fit-content;
+    
+  }
+  
+  .hero-btn:hover {
+    background: #f1f1f1;
+  }
+  
+  /* === Slider Indicators === */
+  .slider-indicators {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  
+  .dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #ffffff60;
+  }
+  
+  .dot.active {
+    background: #DF49FC;
+  }
+  .dot:hover{
+    background: #DF49FC;
+  }
+  
+  /* === Right: Image === */
+  .hero-image {
+    flex: 1 1 400px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+  }
+  
+  .hero-image img {
+    max-width: 90%;
+    height: 580px;
+    object-fit: contain;
+  }
+  
+  /* === Responsive for Tablets & Mobiles === */
+  @media (max-width: 768px) {
+    .hero {
+      flex-direction: column;
+      text-align: center;
+      padding: 40px 5%;
+    }
+  
+    .hero-content {
+      align-items: center;
+    }
+  
+    .hero-content h1 {
+      font-size: 2.25rem;
+    }
+  
+    .hero-content p {
+      font-size: 1rem;
+    }
+  
+    .hero-btn {
+      font-size: 1rem;
+      width: 100%;
+      max-width: 240px;
+    }
+  
+    .slider-indicators {
+      justify-content: center;
+    }
+  }
+  
