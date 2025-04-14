@@ -64,6 +64,7 @@ This is a responsive invoice factoring platform built with React.js. It includes
 react-ebpearls/
 ├── public/
 │   └── assets/                 # Contains images, icons, etc.
+│   ├── index.html              # HTML file where your React app will be rendered
 ├── src/
 │   ├── components/             # Reusable components
 │   │   ├── Header.jsx          # Header component
@@ -80,8 +81,7 @@ react-ebpearls/
 │   │   ├── contact.css         # Styles for the Contact component
 │   │   └── footer.css          # Styles for the Footer component
 │   ├── App.jsx                 # Main App component
-│   └── main.jsx                # Entry point for React app
-├── index.html                  # HTML file where your React app will be rendered
+│   └── index.jsx                # Entry point for React app
 ├── package.json                # Project dependencies and scripts
 └── README.md                   # Project overview and setup instructions
 
