@@ -1,0 +1,10 @@
+# Disallow the /src/ folder and its contents
+User-agent: *
+Disallow: /src/
+
+Disallow: /public/assets/
+
+Disallow: /package.json
+Disallow: /README.md
+
+
